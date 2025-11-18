@@ -20,6 +20,13 @@ var albums = []album {
   {ID: "3", Title: "Sarah Vaughan and Clifford Brown", Artist: "Sarah Vaughan", Price: 39.99},
 }
 
+func DummyMiddleware() gin.HandleFunc {
+  return func(c *gin.Context) {
+    fmt.Println("got ping")
+    c.Next()
+  }
+}
+
 func getAlbumByID(c *gin.Context) {
   id := c.Param("id")
 
@@ -50,6 +57,8 @@ func getAlbums(c *gin.Context) {
 
 func main() {
   router := gin.Default()
+
+  router.Use(DummyMiddleware())
 
   router.GET("/albums",  getAlbums)
   router.GET("/albums/:id", getAlbumByID)
