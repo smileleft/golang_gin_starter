@@ -2,6 +2,7 @@ package main
 
 import (
   "net/http"
+  "fmt"
 
   "github.com/gin-gonic/gin"
 )
@@ -20,7 +21,7 @@ var albums = []album {
   {ID: "3", Title: "Sarah Vaughan and Clifford Brown", Artist: "Sarah Vaughan", Price: 39.99},
 }
 
-func DummyMiddleware() gin.HandleFunc {
+func DummyMiddleware() gin.HandlerFunc {
   return func(c *gin.Context) {
     fmt.Println("got ping")
     c.Next()
