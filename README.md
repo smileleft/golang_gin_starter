@@ -12,3 +12,9 @@ go mod init golang_gin_starter
 ```bash
 go get github.com/gin-gonic/gin
 ```
+
+## run
+
+```bash
+go run main.go
+```
