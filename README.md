@@ -18,3 +18,9 @@ go get github.com/gin-gonic/gin
 ```bash
 go run main.go
 ```
+
+## check
+
+```bash
+curl -X GET http://localhost:8080/albums
+```
